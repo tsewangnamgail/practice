@@ -5,61 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset */
+        * {
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #f0f2f5;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
         header {
-            background-color: #333;
+            background: linear-gradient(135deg, #333, #555);
             color: #fff;
-            padding: 20px 0;
+            padding: 40px 20px;
             text-align: center;
         }
         header h1 {
-            margin: 0;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
         nav {
             display: flex;
             justify-content: center;
-            background-color: #444;
+            background: #222;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         nav a {
             color: #fff;
-            padding: 14px 20px;
+            padding: 15px 25px;
             text-decoration: none;
-            display: block;
+            position: relative;
+            transition: color 0.3s;
         }
         nav a:hover {
-            background-color: #555;
+            color: #ffd700;
         }
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 3px;
+            background: #ffd700;
+            left: 0;
+            bottom: 0;
+            transition: 0.3s;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Sections */
         section {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-            background-color: #fff;
-            margin-top: 20px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
         }
+        section h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #444;
+        }
+
+        /* Projects */
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
         .project {
-            background-color: #eee;
-            padding: 10px;
-            border-radius: 5px;
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+        .project:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+        }
+        .project h3 {
+            margin-bottom: 10px;
+            color: #222;
+        }
+        .project p {
+            color: #666;
+        }
+
+        /* Contact */
+        #contact p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
+            background: #222;
             color: #fff;
-            margin-top: 20px;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
